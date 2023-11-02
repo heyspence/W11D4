@@ -8,4 +8,10 @@
 #  updated_at :datetime         not null
 #
 class Move < ApplicationRecord
+    validates :name, presence: true, uniqueness: true, length: {maximum: 255}
+
+    has_many :poke_moves, dependent: :destroy 
+
+    has_many :pokemon, through: :poke_moves
+
 end
