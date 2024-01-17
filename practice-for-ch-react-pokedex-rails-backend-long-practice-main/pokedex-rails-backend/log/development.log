@@ -11575,3 +11575,301 @@ Processing by Api::PokemonController#show as JSON
 Completed 200 OK in 26ms (Views: 18.9ms | ActiveRecord: 2.8ms | Allocations: 2821)
 
 
+Started POST "/api/pokemon" for ::1 at 2023-11-02 16:49:33 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::PokemonController#create as JSON
+Completed 400 Bad Request in 9ms (ActiveRecord: 0.0ms | Allocations: 3475)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: pokemon:
+  app/controllers/api/pokemon_controller.rb:27:in `pokemon_params'
+  app/controllers/api/pokemon_controller.rb:18:in `create'
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 16:50:07 -0400
+Processing by Api::PokemonController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 544)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: pokemon:
+  app/controllers/api/pokemon_controller.rb:27:in `pokemon_params'
+  app/controllers/api/pokemon_controller.rb:18:in `create'
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 16:50:25 -0400
+Processing by Api::PokemonController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 541)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: pokemon:
+  app/controllers/api/pokemon_controller.rb:27:in `pokemon_params'
+  app/controllers/api/pokemon_controller.rb:18:in `create'
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 16:53:58 -0400
+Processing by Api::PokemonController#create as JSON
+  Parameters: {"pokemon"=>{"number"=>"11", "attack"=>"83", "defense"=>"2", "imageUrl"=>"\"/images/pokemon_snaps/11.svg\"", "name"=>"\"MetaPod\"", "type"=>"\"bug\"", "moves"=>"[\"Tackle\", \"Harden\"]"}}
+[31mUnpermitted parameters: :imageUrl, :type, :moves. Context: { controller: Api::PokemonController, action: create, request: #<ActionDispatch::Request:0x00000001087efd20>, params: {"pokemon"=>{"number"=>"11", "attack"=>"83", "defense"=>"2", "imageUrl"=>"\"/images/pokemon_snaps/11.svg\"", "name"=>"\"MetaPod\"", "type"=>"\"bug\"", "moves"=>"[\"Tackle\", \"Harden\"]"}, "format"=>:json, "controller"=>"api/pokemon", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."number" = $1 LIMIT $2[0m  [["number", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."name" = $1 LIMIT $2[0m  [["name", "\"MetaPod\""], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+Completed 200 OK in 743ms (Views: 0.1ms | ActiveRecord: 7.5ms | Allocations: 974730)
+
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 16:54:49 -0400
+Processing by Api::PokemonController#create as JSON
+  Parameters: {"pokemon"=>{"number"=>"1150", "attack"=>"83", "defense"=>"2", "image_url"=>"\"/images/pokemon_snaps/11.svg\"", "name"=>"\"MetaPod\"", "poke_type"=>"\"bug\"", "moves"=>"[\"Tackle\", \"Harden\"]"}}
+[31mUnpermitted parameter: :moves. Context: { controller: Api::PokemonController, action: create, request: #<ActionDispatch::Request:0x00000001198d7510>, params: {"pokemon"=>{"number"=>"1150", "attack"=>"83", "defense"=>"2", "image_url"=>"\"/images/pokemon_snaps/11.svg\"", "name"=>"\"MetaPod\"", "poke_type"=>"\"bug\"", "moves"=>"[\"Tackle\", \"Harden\"]"}, "format"=>:json, "controller"=>"api/pokemon", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."number" = $1 LIMIT $2[0m  [["number", 1150], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."name" = $1 LIMIT $2[0m  [["name", "\"MetaPod\""], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 3777)
+
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 16:55:19 -0400
+Processing by Api::PokemonController#create as JSON
+  Parameters: {"pokemon"=>{"number"=>"1150", "attack"=>"83", "defense"=>"2", "image_url"=>"\"/images/pokemon_snaps/11.svg\"", "name"=>"\"MetaPod\"", "poke_type"=>"\"fire\"", "moves"=>"[\"Tackle\", \"Harden\"]"}}
+[31mUnpermitted parameter: :moves. Context: { controller: Api::PokemonController, action: create, request: #<ActionDispatch::Request:0x00000001199c4ea0>, params: {"pokemon"=>{"number"=>"1150", "attack"=>"83", "defense"=>"2", "image_url"=>"\"/images/pokemon_snaps/11.svg\"", "name"=>"\"MetaPod\"", "poke_type"=>"\"fire\"", "moves"=>"[\"Tackle\", \"Harden\"]"}, "format"=>:json, "controller"=>"api/pokemon", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."number" = $1 LIMIT $2[0m  [["number", 1150], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."name" = $1 LIMIT $2[0m  [["name", "\"MetaPod\""], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 6.0ms | Allocations: 9179)
+
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 16:55:31 -0400
+Processing by Api::PokemonController#create as JSON
+  Parameters: {"pokemon"=>{"number"=>"1150", "attack"=>"83", "defense"=>"2", "image_url"=>"\"/images/pokemon_snaps/11.svg\"", "name"=>"\"MetaPod\"", "poke_type"=>"fire", "moves"=>"[\"Tackle\", \"Harden\"]"}}
+[31mUnpermitted parameter: :moves. Context: { controller: Api::PokemonController, action: create, request: #<ActionDispatch::Request:0x0000000119bd72d8>, params: {"pokemon"=>{"number"=>"1150", "attack"=>"83", "defense"=>"2", "image_url"=>"\"/images/pokemon_snaps/11.svg\"", "name"=>"\"MetaPod\"", "poke_type"=>"fire", "moves"=>"[\"Tackle\", \"Harden\"]"}, "format"=>:json, "controller"=>"api/pokemon", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."number" = $1 LIMIT $2[0m  [["number", 1150], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."name" = $1 LIMIT $2[0m  [["name", "\"MetaPod\""], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Create (2.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("number", "name", "attack", "defense", "poke_type", "image_url", "captured", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["number", 1150], ["name", "\"MetaPod\""], ["attack", 83], ["defense", 2], ["poke_type", "fire"], ["image_url", "\"/images/pokemon_snaps/11.svg\""], ["captured", false], ["created_at", "2023-11-02 20:55:31.836458"], ["updated_at", "2023-11-02 20:55:31.836458"]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  Rendering api/pokemon/show.json.jbuilder
+  [1m[36mMove Pluck (2.1ms)[0m  [1m[34mSELECT "moves"."name" FROM "moves" INNER JOIN "poke_moves" ON "moves"."id" = "poke_moves"."move_id" WHERE "poke_moves"."pokemon_id" = $1[0m  [["pokemon_id", 126]]
+  ↳ app/views/api/pokemon/show.json.jbuilder:1
+  Rendered api/pokemon/show.json.jbuilder (Duration: 22.8ms | Allocations: 13851)
+Completed 200 OK in 42ms (Views: 20.8ms | ActiveRecord: 12.0ms | Allocations: 21664)
+
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 16:55:55 -0400
+Processing by Api::PokemonController#create as JSON
+  Parameters: {"pokemon"=>{"number"=>"1150", "attack"=>"83", "defense"=>"2", "image_url"=>"/images/pokemon_snaps/11.svg", "name"=>"MetaPod", "poke_type"=>"fire", "moves"=>"[\"Tackle\", \"Harden\"]"}}
+[31mUnpermitted parameter: :moves. Context: { controller: Api::PokemonController, action: create, request: #<ActionDispatch::Request:0x0000000119fa40f0>, params: {"pokemon"=>{"number"=>"1150", "attack"=>"83", "defense"=>"2", "image_url"=>"/images/pokemon_snaps/11.svg", "name"=>"MetaPod", "poke_type"=>"fire", "moves"=>"[\"Tackle\", \"Harden\"]"}, "format"=>:json, "controller"=>"api/pokemon", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."number" = $1 LIMIT $2[0m  [["number", 1150], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."name" = $1 LIMIT $2[0m  [["name", "MetaPod"], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 3878)
+
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 16:56:01 -0400
+Processing by Api::PokemonController#create as JSON
+  Parameters: {"pokemon"=>{"number"=>"11500", "attack"=>"83", "defense"=>"2", "image_url"=>"/images/pokemon_snaps/11.svg", "name"=>"MetaPod", "poke_type"=>"fire", "moves"=>"[\"Tackle\", \"Harden\"]"}}
+[31mUnpermitted parameter: :moves. Context: { controller: Api::PokemonController, action: create, request: #<ActionDispatch::Request:0x000000011a014a08>, params: {"pokemon"=>{"number"=>"11500", "attack"=>"83", "defense"=>"2", "image_url"=>"/images/pokemon_snaps/11.svg", "name"=>"MetaPod", "poke_type"=>"fire", "moves"=>"[\"Tackle\", \"Harden\"]"}, "format"=>:json, "controller"=>"api/pokemon", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."number" = $1 LIMIT $2[0m  [["number", 11500], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."name" = $1 LIMIT $2[0m  [["name", "MetaPod"], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Create (0.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("number", "name", "attack", "defense", "poke_type", "image_url", "captured", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["number", 11500], ["name", "MetaPod"], ["attack", 83], ["defense", 2], ["poke_type", "fire"], ["image_url", "/images/pokemon_snaps/11.svg"], ["captured", false], ["created_at", "2023-11-02 20:56:01.162034"], ["updated_at", "2023-11-02 20:56:01.162034"]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  Rendering api/pokemon/show.json.jbuilder
+  [1m[36mMove Pluck (0.5ms)[0m  [1m[34mSELECT "moves"."name" FROM "moves" INNER JOIN "poke_moves" ON "moves"."id" = "poke_moves"."move_id" WHERE "poke_moves"."pokemon_id" = $1[0m  [["pokemon_id", 127]]
+  ↳ app/views/api/pokemon/show.json.jbuilder:1
+  Rendered api/pokemon/show.json.jbuilder (Duration: 3.6ms | Allocations: 1117)
+Completed 200 OK in 16ms (Views: 3.7ms | ActiveRecord: 3.1ms | Allocations: 4956)
+
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 16:58:14 -0400
+Processing by Api::PokemonController#create as JSON
+  Parameters: {"pokemon"=>{"number"=>"11501", "attack"=>"83", "defense"=>"2", "image_url"=>"/images/pokemon_snaps/11.svg", "name"=>"MetaPod", "poke_type"=>"fire", "moves"=>"[\"Tackle\", \"Harden\"]"}}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 5.7ms | Allocations: 9866)
+
+
+
+NoMethodError - undefined method `each' for "[\"Tackle\", \"Harden\"]":String
+        other_array.each { |val| raise_on_type_mismatch!(val) }
+                   ^^^^^:
+  app/controllers/api/pokemon_controller.rb:18:in `create'
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 16:58:38 -0400
+Processing by Api::PokemonController#create as JSON
+  Parameters: {"pokemon"=>{"number"=>"11502", "attack"=>"83", "defense"=>"2", "image_url"=>"/images/pokemon_snaps/11.svg", "name"=>"MetaPod", "poke_type"=>"fire", "moves"=>"[Tackle, Harden]"}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3642)
+
+
+
+NoMethodError - undefined method `each' for "[Tackle, Harden]":String
+        other_array.each { |val| raise_on_type_mismatch!(val) }
+                   ^^^^^:
+  app/controllers/api/pokemon_controller.rb:18:in `create'
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 16:59:29 -0400
+Processing by Api::PokemonController#create as JSON
+  Parameters: {"pokemon"=>{"number"=>"11503", "attack"=>"83", "defense"=>"2", "image_url"=>"/images/pokemon_snaps/11.svg", "name"=>"MetaPod", "poke_type"=>"fire", "moves"=>"Tackle"}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 3619)
+
+
+
+NoMethodError - undefined method `each' for "Tackle":String
+        other_array.each { |val| raise_on_type_mismatch!(val) }
+                   ^^^^^:
+  app/controllers/api/pokemon_controller.rb:18:in `create'
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 17:00:10 -0400
+Processing by Api::PokemonController#create as JSON
+  Parameters: {"pokemon"=>{"number"=>"11503", "attack"=>"83", "defense"=>"2", "image_url"=>"/images/pokemon_snaps/11.svg", "name"=>"MetaPod", "poke_type"=>"fire"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."number" = $1 LIMIT $2[0m  [["number", 11503], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."name" = $1 LIMIT $2[0m  [["name", "MetaPod"], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 4327)
+
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 17:00:21 -0400
+Processing by Api::PokemonController#create as JSON
+  Parameters: {"pokemon"=>{"number"=>"11503", "attack"=>"83", "defense"=>"2", "image_url"=>"/images/pokemon_snaps/11.svg", "name"=>"MetaPods", "poke_type"=>"fire"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."number" = $1 LIMIT $2[0m  [["number", 11503], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."name" = $1 LIMIT $2[0m  [["name", "MetaPods"], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("number", "name", "attack", "defense", "poke_type", "image_url", "captured", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["number", 11503], ["name", "MetaPods"], ["attack", 83], ["defense", 2], ["poke_type", "fire"], ["image_url", "/images/pokemon_snaps/11.svg"], ["captured", false], ["created_at", "2023-11-02 21:00:21.275559"], ["updated_at", "2023-11-02 21:00:21.275559"]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  Rendering api/pokemon/show.json.jbuilder
+  [1m[36mMove Pluck (0.5ms)[0m  [1m[34mSELECT "moves"."name" FROM "moves" INNER JOIN "poke_moves" ON "moves"."id" = "poke_moves"."move_id" WHERE "poke_moves"."pokemon_id" = $1[0m  [["pokemon_id", 128]]
+  ↳ app/views/api/pokemon/show.json.jbuilder:1
+  Rendered api/pokemon/show.json.jbuilder (Duration: 8.8ms | Allocations: 6092)
+Completed 200 OK in 34ms (Views: 4.5ms | ActiveRecord: 7.2ms | Allocations: 10137)
+
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 17:01:02 -0400
+Processing by Api::PokemonController#create as JSON
+  Parameters: {"pokemon"=>{"number"=>"11505", "attack"=>"83", "defense"=>"2", "image_url"=>"/images/pokemon_snaps/11.svg", "name"=>"MetaPodss", "poke_type"=>"fire", "moves"=>"Tackle"}}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 3673)
+
+
+
+NoMethodError - undefined method `each' for "Tackle":String
+        other_array.each { |val| raise_on_type_mismatch!(val) }
+                   ^^^^^:
+  app/controllers/api/pokemon_controller.rb:18:in `create'
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 17:01:32 -0400
+Processing by Api::PokemonController#create as JSON
+  Parameters: {"pokemon"=>{"number"=>"115055", "attack"=>"83", "defense"=>"2", "image_url"=>"/images/pokemon_snaps/11.svg", "name"=>"MetaPodsss", "poke_type"=>"fire", "moves"=>"[Tackle]"}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3619)
+
+
+
+NoMethodError - undefined method `each' for "[Tackle]":String
+        other_array.each { |val| raise_on_type_mismatch!(val) }
+                   ^^^^^:
+  app/controllers/api/pokemon_controller.rb:18:in `create'
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 17:02:46 -0400
+Processing by Api::PokemonController#create as JSON
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms | Allocations: 2414)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: pokemon:
+  app/controllers/api/pokemon_controller.rb:27:in `pokemon_params'
+  app/controllers/api/pokemon_controller.rb:18:in `create'
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 17:03:01 -0400
+Processing by Api::PokemonController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 541)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: pokemon:
+  app/controllers/api/pokemon_controller.rb:27:in `pokemon_params'
+  app/controllers/api/pokemon_controller.rb:18:in `create'
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 17:06:57 -0400
+Processing by Api::PokemonController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 540)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: pokemon:
+  app/controllers/api/pokemon_controller.rb:27:in `pokemon_params'
+  app/controllers/api/pokemon_controller.rb:18:in `create'
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 17:07:11 -0400
+Processing by Api::PokemonController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 540)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: pokemon:
+  app/controllers/api/pokemon_controller.rb:27:in `pokemon_params'
+  app/controllers/api/pokemon_controller.rb:18:in `create'
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 17:10:36 -0400
+Processing by Api::PokemonController#create as JSON
+  Parameters: {"pokemon"=>{"number"=>"115055", "attack"=>"83", "defense"=>"2", "image_url"=>"/images/pokemon_snaps/11.svg", "name"=>"MetaPodsss", "poke_type"=>"fire", "moves"=>{"0"=>"Tackle"}}}
+[31mUnpermitted parameter: :moves. Context: { controller: Api::PokemonController, action: create, request: #<ActionDispatch::Request:0x00000001191172f8>, params: {"pokemon"=>{"number"=>"115055", "attack"=>"83", "defense"=>"2", "image_url"=>"/images/pokemon_snaps/11.svg", "name"=>"MetaPodsss", "poke_type"=>"fire", "moves"=>{"0"=>"Tackle"}}, "format"=>:json, "controller"=>"api/pokemon", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."number" = $1 LIMIT $2[0m  [["number", 115055], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pokemons" WHERE "pokemons"."name" = $1 LIMIT $2[0m  [["name", "MetaPodsss"], ["LIMIT", 1]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mPokemon Create (1.1ms)[0m  [1m[32mINSERT INTO "pokemons" ("number", "name", "attack", "defense", "poke_type", "image_url", "captured", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["number", 115055], ["name", "MetaPodsss"], ["attack", 83], ["defense", 2], ["poke_type", "fire"], ["image_url", "/images/pokemon_snaps/11.svg"], ["captured", false], ["created_at", "2023-11-02 21:10:36.098791"], ["updated_at", "2023-11-02 21:10:36.098791"]]
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/pokemon_controller.rb:19:in `create'
+  Rendering api/pokemon/show.json.jbuilder
+  [1m[36mMove Pluck (2.6ms)[0m  [1m[34mSELECT "moves"."name" FROM "moves" INNER JOIN "poke_moves" ON "moves"."id" = "poke_moves"."move_id" WHERE "poke_moves"."pokemon_id" = $1[0m  [["pokemon_id", 129]]
+  ↳ app/views/api/pokemon/show.json.jbuilder:1
+  Rendered api/pokemon/show.json.jbuilder (Duration: 25.1ms | Allocations: 7719)
+Completed 200 OK in 78ms (Views: 20.2ms | ActiveRecord: 30.8ms | Allocations: 18314)
+
+
+Started POST "/api/pokemon" for ::1 at 2023-11-02 17:10:58 -0400
+Processing by Api::PokemonController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 562)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: pokemon:
+  app/controllers/api/pokemon_controller.rb:27:in `pokemon_params'
+  app/controllers/api/pokemon_controller.rb:18:in `create'
+
